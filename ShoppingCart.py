@@ -24,7 +24,9 @@ class ShoppingCart:
         for item in self.items:
             self.items.pop(item)
 
-    
+    #Creates a getter and setter for item
+    def set_item(self, item):
+        self.item = item
 def main():
 
     shoppingCart = ShoppingCart()
