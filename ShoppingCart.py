@@ -1,7 +1,7 @@
 import random
 
 class ShoppingCart:
-    def __init__(self, items=None, total_price=None):
+    def __init__(self, items=None, total_price=0):
         self.items = []
         self.total_price = total_price
 
@@ -14,5 +14,6 @@ class ShoppingCart:
         self.items.append[item]
         prices = [10, 20, 30, 40, 50]
         for item in len(self.items):
-            price = 
+            price = random.choice(prices)
+            self.total_price = self.total_price + price
     
