@@ -18,6 +18,12 @@ class ShoppingCart:
         for _ in self.items:
             price = random.choice(prices)
             self.total_price = self.total_price + price
+
+    #Creates a method that removes elements
+    def remove_item(self, *item):
+        for item in self.items:
+            self.items.pop(item)
+
     
 def main():
 
