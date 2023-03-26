@@ -8,3 +8,7 @@ class ShoppingCart:
     def __str__(self):
         return "This is Shooping Cart class"
     
+    #Creates a method that makes the user add a number of items
+    def add_item(self, *item):
+        self.items.append[item]
+    
