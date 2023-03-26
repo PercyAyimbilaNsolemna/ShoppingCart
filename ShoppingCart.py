@@ -10,12 +10,12 @@ class ShoppingCart:
         return "This is Shooping Cart class"
     
     #Creates a method that makes the user add a number of items
-    def add_item(self, item):
+    def add_item(self, *item):
         items = []
         items.append(item)
         self.items = items
         prices = [10, 20, 30, 40, 50]
-        for item in self.items:
+        for _ in self.items:
             price = random.choice(prices)
             self.total_price = self.total_price + price
     
@@ -28,6 +28,10 @@ def main():
     print(shoppingCart.total_price)
 
     shoppingCart.add_item("Mango")
+
+    print(shoppingCart.total_price)
+
+    shoppingCart.add_item("Orange", "Apple")
 
     print(shoppingCart.total_price)
 
