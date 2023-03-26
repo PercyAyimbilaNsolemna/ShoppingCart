@@ -16,4 +16,11 @@ class ShoppingCart:
         for item in len(self.items):
             price = random.choice(prices)
             self.total_price = self.total_price + price
+        return self.total_price
+    
+def main():
+
+
+if __name__ == "__main__":
+    main()
     
