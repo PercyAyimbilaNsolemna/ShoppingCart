@@ -25,6 +25,10 @@ class ShoppingCart:
             self.items.pop(item)
 
     #Creates a getter and setter for item
+    def get_item(self):
+        return self.add_item
+    
+    
     def set_item(self, item):
         self.item = item
 def main():
