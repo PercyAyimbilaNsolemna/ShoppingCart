@@ -1,3 +1,4 @@
+import random
 
 class ShoppingCart:
     def __init__(self, items=None, total_price=None):
@@ -11,4 +12,7 @@ class ShoppingCart:
     #Creates a method that makes the user add a number of items
     def add_item(self, *item):
         self.items.append[item]
+        prices = [10, 20, 30, 40, 50]
+        for item in len(self.items):
+            price = 
     
