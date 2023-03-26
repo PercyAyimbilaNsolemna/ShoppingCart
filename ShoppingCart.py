@@ -28,7 +28,11 @@ class ShoppingCart:
     def get_item(self):
         return self.add_item
     
+    #Creates a getter and setter for total price 
+    def get_total_price(self, total_price):
+        return self.total_price
     
+
     def set_item(self, item):
         self.item = item
 def main():
