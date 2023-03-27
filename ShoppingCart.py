@@ -41,6 +41,15 @@ class ShoppingCart:
     def set_total_price(self, total_price):
         self._total_price = total_price
 
+    #Creates a getter and setter using python's property approach
+    @property
+    def items(self):
+        return self.iems
+    
+    @items.setter
+    def items(self, items):
+        self._items = items
+
 
 def main():
 
