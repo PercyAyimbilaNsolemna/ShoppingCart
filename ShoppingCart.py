@@ -10,7 +10,7 @@ class ShoppingCart:
         return "This is Shooping Cart class"
     
     #Creates a method that makes the user add a number of items
-    def add_item(self, *item):
+    def add_item(self, item):
         self.item = item
         self.items.append(self.item)
         prices = [10, 20, 30, 40, 50]
@@ -19,9 +19,10 @@ class ShoppingCart:
             self.total_price = self.total_price + price
 
     #Creates a method that removes elements
-    def remove_item(self, *item):
-        for item in self.items:
-            self.items.pop(item)
+    def remove_item(self, item):
+        if item in self.items:
+            self.items.remove(item)
+
 
     #Creates a getter and setter for item
     def get_item(self):
@@ -61,6 +62,17 @@ def main():
     shoppingCart.add_item("Mango")
 
     print(shoppingCart.items)
+
+    shoppingCart.add_item("Orange")
+
+    print(shoppingCart.items)
+
+    print(shoppingCart.total_price)
+
+    shoppingCart.remove_item("Orange")
+    print(shoppingCart.items)
+
+    print(shoppingCart.total_price)
 
 
 if __name__ == "__main__":
