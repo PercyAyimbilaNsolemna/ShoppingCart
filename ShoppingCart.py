@@ -1,9 +1,10 @@
 import random
 
 class ShoppingCart:
-    def __init__(self, items=None, total_price=0):
+    def __init__(self, items=None, total_price=0, prices=None):
         self.items = []
         self.total_price = total_price
+        self.prices = [10, 20, 30, 40, 50]
 
     #Creates an __str__ method that makes it possible to pass an object created from this class to the print function
     def __str__(self):
@@ -13,15 +14,15 @@ class ShoppingCart:
     def add_item(self, item):
         self.item = item
         self.items.append(self.item)
-        prices = [10, 20, 30, 40, 50]
         for _ in self.items:
-            price = random.choice(prices)
+            price = random.choice(self.prices)
             self.total_price = self.total_price + price
 
     #Creates a method that removes elements
     def remove_item(self, item):
         if item in self.items:
             self.items.remove(item)
+            self.total_price = self.total_price - random.choice(self.prices)
 
 
     #Creates a getter and setter for item
