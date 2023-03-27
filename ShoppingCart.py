@@ -11,9 +11,8 @@ class ShoppingCart:
     
     #Creates a method that makes the user add a number of items
     def add_item(self, *item):
-        items = []
-        items.append(item)
-        self.items = items
+        self.item = item
+        self.items.append(self.item)
         prices = [10, 20, 30, 40, 50]
         for _ in self.items:
             price = random.choice(prices)
@@ -44,7 +43,7 @@ class ShoppingCart:
     #Creates a getter and setter using python's property approach
     @property
     def items(self):
-        return self.iems
+        return self._items
     
     @items.setter
     def items(self, items):
@@ -61,11 +60,7 @@ def main():
 
     shoppingCart.add_item("Mango")
 
-    print(shoppingCart.total_price)
-
-    shoppingCart.add_item("Orange", "Apple")
-
-    print(shoppingCart.total_price)
+    print(shoppingCart.items)
 
 
 if __name__ == "__main__":
