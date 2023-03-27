@@ -11,18 +11,21 @@ class ShoppingCart:
         return "This is Shooping Cart class"
     
     #Creates a method that makes the user add a number of items
-    def add_item(self, item):
+    def add_item(self, *item):
         self.item = item
-        self.items.append(self.item)
+        for an_item in self.item:
+            self.items.append(an_item)
         for _ in self.items:
             price = random.choice(self.prices)
             self.total_price = self.total_price + price
 
     #Creates a method that removes elements
-    def remove_item(self, item):
-        if item in self.items:
-            self.items.remove(item)
-            self.total_price = self.total_price - random.choice(self.prices)
+    def remove_item(self, *item):
+        self.item = item
+        for an_item in self.item:
+            if an_item in self.items:
+                self.items.remove(an_item)
+                self.total_price = self.total_price - random.choice(self.prices)
 
 
     #Creates a getter and setter for item
@@ -60,7 +63,7 @@ def main():
 
     print(shoppingCart.total_price)
 
-    shoppingCart.add_item("Mango")
+    shoppingCart.add_item("Mango", "Guava")
 
     print(shoppingCart.items)
 
@@ -74,6 +77,14 @@ def main():
     print(shoppingCart.items)
 
     print(shoppingCart.total_price)
+
+    shoppingCart.remove_item("Orange", "Mango")
+    print(shoppingCart.items)
+
+    print(shoppingCart.total_price)
+
+    shoppingCart.remove_item("Orange", "Mango", "Rice")
+    print(shoppingCart.items)
 
 
 if __name__ == "__main__":
